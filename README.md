@@ -18,9 +18,50 @@ Notitas permite gestionar páginas, bases de datos internas y compartir contenid
    - 5.2 Embebido de contenido multimedia
    - (Las fases 5.3 a 5.6 están previstas pero aún no implementadas)
 
-A continuación se describen con detalle cada fase, el estado de implementación y las instrucciones para levantar el proyecto.
+---
+
+## ⚙️ Tecnologías
+
+### Backend
+
+- **Node.js LTS (≥16)**
+- **Express.js**
+- **cors**
+- **helmet**
+- **morgan**
+- **express-validator** (o **Joi**)
+- **MongoDB Atlas + Mongoose**
+- **bcryptjs**
+- **JSON Web Tokens (JWT)**
+- **dotenv**
+- **nodemon**
+- **jest + supertest** (tests unitarios y de integración)
+- **swagger-ui-express** (documentación API)
+- **winston** (logging avanzado)
+- **Docker & Docker Compose**
+
+### Frontend
+
+- **React 18 + TypeScript** (Vite o CRA)
+- **React Router DOM**
+- **Axios**
+- **Context API** (AuthContext, DatabaseContext)
+- **ESLint + Prettier + Husky + lint-staged**
+- **Jest + React Testing Library**
+- **FullCalendar** (`@fullcalendar/react`, `@fullcalendar/daygrid`, etc.)
+- **react-icons**
+- **concurrently** (para lanzar cliente + servidor en un solo comando)
+- **tailwindcss** (o tu framework de CSS favorito)
+- **Docker**
+
+### CI / CD (opcional)
+
+- **GitHub Actions** (build, test, deploy)
+- **Render.com** (hosting)
 
 ---
+
+A continuación se describen con detalle cada fase, el estado de implementación y las instrucciones para levantar el proyecto.
 
 ## 🚀 Funcionalidades por fase
 
@@ -192,28 +233,6 @@ A continuación se describen con detalle cada fase, el estado de implementación
 - **5.6 Tests (Unitarios e Integración)**
 
 > Fases 5.3 a 5.6 pendiente de implementación. El MVP es funcional sin ellas, pero recomiendo completarlas en el futuro.
-
----
-
-## ⚙️ Tecnologías
-
-- **Backend**
-
-  - Node.js LTS (≥16)
-  - Express.js
-  - MongoDB Atlas + Mongoose
-  - bcryptjs
-  - JSON Web Tokens (JWT)
-  - dotenv
-  - nodemon
-
-- **Frontend**
-  - React 18 + TypeScript (Vite o CRA)
-  - React Router DOM
-  - Axios
-  - Context API (AuthContext, DatabaseContext)
-  - ESLint + Prettier + Husky
-  - FullCalendar, react-icons
 
 ---
 
