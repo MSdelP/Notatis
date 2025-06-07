@@ -1,8 +1,8 @@
-# Notitas
+# Notatis
 
-**Notitas** es un clon sencillo de Notion, construido de forma progresiva siguiendo seis fases de desarrollo. Este README detalla cada etapa, el estado actual de implementación y cómo ejecutar el proyecto localmente.
+**Notatis** es un clon sencillo de Notion, construido de forma progresiva siguiendo seis fases de desarrollo. Este README detalla cada etapa, el estado actual de implementación y cómo ejecutar el proyecto localmente.
 
----
+## https://notitas-39d7.onrender.com
 
 ## 📄 Descripción
 
