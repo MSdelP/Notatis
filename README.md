@@ -24,40 +24,35 @@ Notitas permite gestionar páginas, bases de datos internas y compartir contenid
 
 ### Backend
 
-- **Node.js LTS (≥16)**
-- **Express.js**
-- **cors**
-- **helmet**
-- **morgan**
-- **express-validator** (o **Joi**)
-- **MongoDB Atlas + Mongoose**
-- **bcryptjs**
-- **JSON Web Tokens (JWT)**
-- **dotenv**
-- **nodemon**
-- **jest + supertest** (tests unitarios y de integración)
-- **swagger-ui-express** (documentación API)
-- **winston** (logging avanzado)
-- **Docker & Docker Compose**
+- **Node.js LTS (≥16)**: Runtime de JavaScript en servidor que permite ejecutar código JS fuera del navegador.
+- **Express.js**: Framework web minimalista y flexible para construir API y servicios REST.
+- **cors**: Middleware para habilitar Cross-Origin Resource Sharing y controlar orígenes permitidos.
+- **express-validator**: Middleware para validar y sanear datos de las solicitudes HTTP.
+- **MongoDB Atlas + Mongoose**: Base de datos NoSQL en la nube y ODM que facilita la modelación de esquemas.
+- **bcryptjs**: Biblioteca para encriptar y verificar contraseñas usando hashing seguro.
+- **JSON Web Tokens (JWT)**: Estándar para generar tokens compactos de autenticación y autorización.
+- **dotenv**: Carga variables de entorno definidas en un archivo `.env` en `process.env`.
+- **nodemon**: Herramienta que reinicia automáticamente el servidor al detectar cambios en el código fuente.
+- **jest + supertest**: Framework de testing y librería para pruebas de integración de endpoints HTTP.
+- **swagger-ui-express**: Integra Swagger UI para generar documentación interactiva de la API.
+- **autoprefixer**: Plugin de PostCSS que añade prefijos de navegador automáticamente al CSS.
 
 ### Frontend
 
-- **React 18 + TypeScript** (Vite o CRA)
-- **React Router DOM**
-- **Axios**
-- **Context API** (AuthContext, DatabaseContext)
-- **ESLint + Prettier + Husky + lint-staged**
-- **Jest + React Testing Library**
-- **FullCalendar** (`@fullcalendar/react`, `@fullcalendar/daygrid`, etc.)
-- **react-icons**
-- **concurrently** (para lanzar cliente + servidor en un solo comando)
-- **tailwindcss** (o tu framework de CSS favorito)
-- **Docker**
+- **React 18 + TypeScript (CRA)**: Librería de UI declarativa con tipado estático para construir componentes escalables.
+- **React Router DOM**: Enrutamiento dinámico y navegación declarativa en aplicaciones React.
+- **Axios**: Cliente HTTP basado en promesas para consumir APIs REST de forma sencilla.
+- **Context API (AuthContext, DatabaseContext)**: Gestión de estado global integrada en React sin necesidad de Redux.
+- **ESLint + Prettier + Husky + lint-staged**: Conjunto de herramientas para linting, formateo de código y pre-commits automáticos.
+- **Jest + React Testing Library**: Framework y librería para realizar pruebas unitarias y de componentes en React.
+- **FullCalendar** (`@fullcalendar/react`, `@fullcalendar/daygrid`, etc.): Componente de calendario interactivo con vistas de día, semana y mes.
+- **react-icons**: Biblioteca de iconos para React que incluye cientos de colecciones populares.
+- **slate**: Framework para construir editores de texto enriquecido y personalizados en React.
 
-### CI / CD (opcional)
+### CI / CD
 
-- **GitHub Actions** (build, test, deploy)
-- **Render.com** (hosting)
+- **GitHub Actions (build, test, deploy)**: Pipelines de integración y despliegue continuo directamente desde GitHub.
+- **Render.com (hosting)**: Plataforma para desplegar y escalar aplicaciones frontend y backend en la nube.
 
 ---
 
