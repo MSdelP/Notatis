@@ -170,7 +170,7 @@ const Sidebar: React.FC = () => {
       {/* ─── TÍTULO “🚀 Notatis” ──────────────────────────────────── */}
       <div style={{ marginBottom: '24px', textAlign: 'center' }}>
         <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--color-text)' }}>
-          🚀 Notitas
+          🚀 Notatis
         </h2>
       </div>
 
