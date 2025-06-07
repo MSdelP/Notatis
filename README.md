@@ -34,8 +34,6 @@ Notitas permite gestionar páginas, bases de datos internas y compartir contenid
 - **dotenv**: Carga variables de entorno definidas en un archivo `.env` en `process.env`.
 - **nodemon**: Herramienta que reinicia automáticamente el servidor al detectar cambios en el código fuente.
 - **jest + supertest**: Framework de testing y librería para pruebas de integración de endpoints HTTP.
-- **swagger-ui-express**: Integra Swagger UI para generar documentación interactiva de la API.
-- **autoprefixer**: Plugin de PostCSS que añade prefijos de navegador automáticamente al CSS.
 
 ### Frontend
 
