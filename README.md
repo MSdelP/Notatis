@@ -16,7 +16,7 @@ Notitas permite gestionar páginas, bases de datos internas y compartir contenid
 6. **Fase 5 – Funcionalidades avanzadas y pulido final**
    - 5.1 Versionado de páginas
    - 5.2 Embebido de contenido multimedia
-   - (Las fases 5.3 a 5.6 están previstas pero aún no implementadas)
+   - 5.3 Tema oscuro y tematización
 
 ---
 
@@ -62,7 +62,7 @@ A continuación se describen con detalle cada fase, el estado de implementación
 
 - **Objetivo:** Tener todas las herramientas, cuentas y repositorios listos.
 - **Entregables y estado:**
-  - Repositorio principal en GitHub/GitLab: `notitas-web`.
+  - Repositorio principal en GitHub/GitLab: `Notatis`.
   - Branching model con `main` y ramas de _feature_.
   - Clúster en MongoDB Atlas configurado, usuario + IP whitelist, conexión probada (`test-db-connection.js`).
   - Estructura base del proyecto (React + TypeScript con CRA o Vite).
@@ -221,11 +221,6 @@ A continuación se describen con detalle cada fase, el estado de implementación
   - Estado: ⚠ Semi-implementado (solo UI).
 
 - **5.3 Modo oscuro y tematización**
-- **5.4 Optimización de rendimiento (Lazy loading, virtualización de listas)**
-- **5.5 Diseño responsive (mobile-first)**
-- **5.6 Tests (Unitarios e Integración)**
-
-> Fases 5.3 a 5.6 pendiente de implementación. El MVP es funcional sin ellas, pero recomiendo completarlas en el futuro.
 
 ---
 
