@@ -49,34 +49,36 @@ router.post('/', async (req, res) => {
     return res.status(500).json({ message: 'Error asignando permiso' });
   }
 });
-router.get("/", protect, async (req, res) => {
+
+// GET /api/permissions
+// Listar todos los permisos de un recurso
+// Query: ?resourceType=database&resourceId=<id>
+router.get('/', async (req, res) => {
   const { resourceType, resourceId } = req.query;
   if (!resourceType || !resourceId) {
-    return res.status(400).json({ message: "Faltan resourceType o resourceId en la query" });
+    return res.status(400).json({ message: 'Faltan resourceType o resourceId en la query' });
   }
-
   try {
-    // Busca el permiso de este usuario sobre este recurso
-    const myPerm = await Permission.findOne({
+    // Solo el owner del recurso puede consultar la lista de permisos
+    const permisoOwner = await Permission.findOne({
       resourceType,
       resourceId,
-      userId: req.user.id    // <— CORRECTO: userId en lugar de user
+      user: req.user.id,
+      role: 'owner'
     });
-
-    if (!myPerm || !["owner", "edit"].includes(myPerm.role)) {
-      return res.status(403).json({ message: "No tienes permiso para ver la lista de colaboradores" });
+    if (!permisoOwner) {
+      return res.status(403).json({ message: 'No tienes permiso para ver la lista de colaboradores' });
     }
-
-    // Ahora sí: recupera TODOS los permisos de este recurso
-    const perms = await Permission.find({ resourceType, resourceId })
-      .populate("userId", "email"); // <— Popula userId
-
-    return res.json(perms);
+    // Traer todos los permisos para ese recurso, con datos de usuario “populated”
+    const permisos = await Permission.find({
+      resourceType,
+      resourceId
+    }).populate('user', 'email'); // solo email del usuario
+    return res.json(permisos);
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ message: "Error obteniendo permisos" });
+    return res.status(500).json({ message: 'Error obteniendo permisos' });
   }
-});
 
 // DELETE /api/permissions/:id
 // Revocar permiso (solo owner)
