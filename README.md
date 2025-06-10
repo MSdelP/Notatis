@@ -237,7 +237,7 @@ A continuación se describen con detalle cada fase, el estado de implementación
 ### 1. Clonar repositorio
 
 ```bash
-git clone <tu-repo-url> notitas-web
+git clone [<tu-repo-url> Notatis](https://github.com/MSdelP/Notatis)
 cd notitas-web
 ```
 
