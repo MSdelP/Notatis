@@ -49,35 +49,32 @@ router.post('/', async (req, res) => {
     return res.status(500).json({ message: 'Error asignando permiso' });
   }
 });
-
-// GET /api/permissions
-// Listar todos los permisos de un recurso
-// Query: ?resourceType=database&resourceId=<id>
-router.get('/', async (req, res) => {
+router.get("/", protect, async (req, res) => {
   const { resourceType, resourceId } = req.query;
   if (!resourceType || !resourceId) {
-    return res.status(400).json({ message: 'Faltan resourceType o resourceId en la query' });
+    return res.status(400).json({ message: "Faltan resourceType o resourceId en la query" });
   }
+
   try {
-    // Solo el owner del recurso puede consultar la lista de permisos
-    const permisoOwner = await Permission.findOne({
+    // Busca el permiso de este usuario sobre este recurso
+    const myPerm = await Permission.findOne({
       resourceType,
       resourceId,
-      user: req.user.id,
-      role: 'owner'
+      userId: req.user.id    // <— CORRECTO: userId en lugar de user
     });
-    if (!permisoOwner) {
-      return res.status(403).json({ message: 'No tienes permiso para ver la lista de colaboradores' });
+
+    if (!myPerm || !["owner", "edit"].includes(myPerm.role)) {
+      return res.status(403).json({ message: "No tienes permiso para ver la lista de colaboradores" });
     }
-    // Traer todos los permisos para ese recurso, con datos de usuario “populated”
-    const permisos = await Permission.find({
-      resourceType,
-      resourceId
-    }).populate('user', 'email'); // solo email del usuario
-    return res.json(permisos);
+
+    // Ahora sí: recupera TODOS los permisos de este recurso
+    const perms = await Permission.find({ resourceType, resourceId })
+      .populate("userId", "email"); // <— Popula userId
+
+    return res.json(perms);
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ message: 'Error obteniendo permisos' });
+    return res.status(500).json({ message: "Error obteniendo permisos" });
   }
 });
 
